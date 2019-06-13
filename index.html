@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Random Dog Pics</h1>
+    <p>Dog Breed:</p>
+    <input onfocus="this.value=''" id="search" type="text" placeholder="Enter Breed Name">
+    <br><br>
+    <button  type="submit" id="submit" onclick="search()">Search</button>
+    <button  type="submit" id="submit" onclick="window.location.reload();">Clear</button>
+   <fieldset>
+       <legend>Picture:</legend>
+       <img id="doge" src="" alt="" width="480px">
+   </fieldset> 
+
+<script>
+    var dogBreed =document.querySelector("#search").value;
+    const base_url="https://dog.ceo/api/breed";
+    function search() {
+        fetch(`${base_url}/${dogBreed}/images/random`)
+        . then (response => {
+            console.log(response)
+            return response.json()
+    })
+        . then (json => {
+        console.log(json)
+        document.getElementById("doge").src=json.message
+    })
+    }
+    function clearAll() {
+        location.reload();
+    }
+</script>
+</body>
+</html>

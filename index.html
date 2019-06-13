@@ -18,10 +18,10 @@
     <p>Picture:</p>
        <img id="doge" src="" alt="" width="480px">
 
-<script>
-   
+<script>   
     const base_url="https://dog.ceo/api/breed";
     function search() {
+        
         var dogBreed = document.querySelector("#search").value;
         fetch(`${base_url}/${dogBreed}/images/random`)
         . then (response => {

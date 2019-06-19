@@ -5,6 +5,7 @@ A website which allow you to view random dog pictures
 ## Created Using:
 - HTML
 - CSS
+- Bootstrap
 - JavaScript
 - Dog-ceo-API
 
